@@ -15,7 +15,7 @@ function App() {
         <Navbar />
       </div>
       <Routes>
-        <Route path='/' element={<div style={{ padding: "20px" }} ><Home /> <Home /> <Home /><Home /></div>} />
+        <Route path='/' element={<div style={{ padding: "20px" }} ><Home /></div>} />
         <Route path='/register' element={<Form type={"Register"} />} />
         <Route path='/login' element={<Form type={"Login"} />} />
         <Route path='/about' element={<h1>Welcome To About Us Page</h1>} />
