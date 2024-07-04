@@ -7,7 +7,7 @@ import updateRouter from "./routes/update.routes.js";
 import deleteRouter from "./routes/delete.routes.js";
 const app = express()
 dotenv.config()
-app.use("/api", express.json());
+app.use(express.json());
 app.use("/api", createRouter)
 app.use("/api", readRouter)
 app.use("/api", updateRouter)
