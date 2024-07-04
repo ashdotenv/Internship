@@ -7,7 +7,7 @@ export const register = (req, res) => {
     const sql = "insert into users(`fullName`,`username`,`email`,`password`)values(?,?,?,?)";
     db.query(sql, [fullName, username, email, password], (err, result) => {
         if (err) return res.status(500).json({ error: "Insertion Failed" })
-        res.json({ message: "Hello world", result })
+        res.json({ message: "User Registerd Successfully", result })
     })
 
 }
