@@ -1,7 +1,6 @@
 import db from "../db.js";
 
 export const login = (req, res) => {
-    console.log("Login Controller");
     const { username, password } = req.body
     if (!username || !password) {
         return res.status(500).json({ eror: "Enter Details Carefully" })
