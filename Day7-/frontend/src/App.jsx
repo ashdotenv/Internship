@@ -5,9 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import { Route, Routes } from 'react-router-dom';
 import Register from './Pages/Register';
 import Users from './Pages/Users';
+import Login from './Pages/Login';
 
 function App() {
-  
+
 
   return (
     <>
@@ -24,10 +25,11 @@ function App() {
         theme="light"
       />
       <Routes>
-        <Route path='/users' element={<Users/>} />
-        <Route path='/register' element={<Register/>} />
+        <Route path='/users' element={<Users />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
-     
+
     </>
   );
 }

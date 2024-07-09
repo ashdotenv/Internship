@@ -4,6 +4,8 @@ import db from "./db.js"
 import loginRoute from "./routes/login.routes.js"
 import registerRoute from "./routes/register.routes.js"
 import readRoute from "./routes/read.routes.js"
+import updateRoute from "./routes/update.routes.js"
+import deleteRoute from "./routes/delete.routes.js"
 import cors from 'cors';
 const app = express()
 dotenv.config()
@@ -12,10 +14,12 @@ app.use(cors({
     credentials: true
 }))
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 app.use("/api", loginRoute)
 app.use("/api", registerRoute)
 app.use("/api", readRoute)
+app.use("/api", updateRoute)
+app.use("/api", deleteRoute)
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     console.log(`Serving on port ${PORT}`);
