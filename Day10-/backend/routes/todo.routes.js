@@ -5,5 +5,5 @@ router.get("/todos", getTodos)
 router.get("/todo/:id", getTodo)
 router.post("/addTodo", createTodo)
 router.delete("/delete/:id", deleteTodo)
-router.patch("/edit/:id", updateTodo)
+router.patch("/update/:id", updateTodo)
 export default router
