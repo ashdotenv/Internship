@@ -27,7 +27,7 @@ export const createTodo = (req, res) => {
     const sql = "INSERT INTO todos (title, content) VALUES (?, ?)"
     db.query(sql, [title, content], (err, result) => {
         if (err) return res.status(500).json({ error: "Sql Error" })
-        return res.status(200).json({ message: "Todo Inserted Successfully" })
+        return res.status(200).json({ message: "Todo Inserted Successfully", id: result.insertId })
     })
 }
 export const deleteTodo = (req, res) => {
@@ -59,7 +59,6 @@ export const updateTodo = (req, res) => {
     db.query(selectQuery, [id], (err, selectResult) => {
         if (err) return res.status(500).json({ err: err.message });
         if (selectResult.length === 0) return res.status(404).json({ message: "Todo Not Found" });
-
         const todo = selectResult[0];
         const updatedTitle = title || todo.title;
         const updatedContent = content || todo.content;
