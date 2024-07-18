@@ -7,15 +7,20 @@ const Login = () => {
     e.preventDefault()
   }
   return (
-    <div>
-      <form onSubmit={handleSumbit} className='border h-full '>
-        <h1>Username</h1>
-        <input onChange={(e) => setUser({ ...user, username: e.target.value })} className='border-black border' type="text" name='username' />
-        <h1>Email</h1>
-        <input onChange={(e) => setUser({ ...user, email: e.target.value })} className='border-black border' type="text" name='email' />
-        <br /> <button onClick={() => login(user)} className='p-2 bg-green-400 mt-5 rounded-xl'>Login</button>
-      </form>
-    </div>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <form class="bg-white p-8 rounded-lg shadow-lg space-y-6 w-full max-w-md">
+        <div>
+            <label for="username" class="block text-gray-700 font-semibold">Username</label>
+            <input name="username" type="text" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+            <label for="password" class="block text-gray-700 font-semibold">Password</label>
+            <input name="password" type="password" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Login</button>
+    </form>
+</div>
+
   )
 }
 
