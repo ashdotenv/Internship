@@ -14,5 +14,5 @@ export const verifyToken = (req, res, next) => {
     if (!decoded) {
         return res.status(401).json({ message: "User Couldn't Be Verified" })
     }
-    // next()
+    next()
 }
