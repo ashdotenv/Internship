@@ -7,8 +7,10 @@ const app = express()
 import authRoute from "./routes/auth.routes.js"
 import blogRoute from "./routes/blog.routes.js"
 import cookieParser from "cookie-parser"
+
 app.use(express.json())
 app.use(cookieParser())
+app.use(express.static('uploads'))
 app.use(cors(
     { credentials: true, origin: ['http://localhost:5173'] }
 ))

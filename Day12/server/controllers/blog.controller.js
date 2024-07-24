@@ -5,8 +5,8 @@ export const addblog = (req, res) => {
     if (!title || !content) {
         return res.status(400).json({ error: "Fill In all Fields Carefully" })
     }
-    const sql = "insert into posts(user_id,title,content) values(?,?,?)"
-    db.query(sql, [req.user.id, title, content], (err, result) => {
+    const sql = "insert into posts(user_id,title,content,image) values(?,?,?,?)"
+    db.query(sql, [req.user.id, title, content, req.file?.filename ?? ""], (err, result) => {
         if (err) return res.status(500).json({ err: "SQL Error", err: err })
         res.status(200).json({ message: result })
     })

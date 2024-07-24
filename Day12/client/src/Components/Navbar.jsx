@@ -7,9 +7,11 @@ const Navbar = () => {
     return (
         <>
             <nav className='flex gap-4  bg-sky-200 justify-end p-2 text-xl'  >
-                <NavLink>Home</NavLink>
-                <NavLink>Services</NavLink>
-                {user ? <NavLink onClick={logout}>Logout</NavLink> : <NavLink>Login</NavLink>}
+                <NavLink to={"/"} >Home</NavLink>
+                <NavLink to={"/register"} >Register</NavLink>
+                <NavLink to={"/login"} >Login</NavLink>
+                <NavLink to={"/addPost"} >AddPost</NavLink>
+                <NavLink to={"/editPost"} >EditPost</NavLink>
             </nav>
         </>
     )
